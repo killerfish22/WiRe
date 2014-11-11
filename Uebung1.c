@@ -24,13 +24,6 @@ int main(int argc, char* argv[])
 			multiplicity++;
 		}
 		if (multiplicity != 0)
-// 			cout << i << "^" << multiplicity << " * ";
-// 		  if (number != 1) {
-// 		    printf("%i ^ %i * ",i,multiplicity);
-// 		  }
-// 		  else {
-// 		    printf("%i ^ %i",i,multiplicity);
-// 		  }
 		  printf("%i ^ %i %s",i,multiplicity, (number!=1)? "* ": "");
 	}
 	printf("\n");
