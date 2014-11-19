@@ -7,9 +7,12 @@ void mantissa(int *t, int t_rest, int* p, int *exp, int *mant)
   //function to recursively compute all digit arrangements and print resulting numbers
   int digit=0;
   int i=0;
+  int start=0;
+  
   if(t_rest>0) 
   {
-  for(digit=0;digit<*p;digit++)
+    start= (t_rest==*t) ? 1 : 0;
+  for(digit=start ;digit<*p;digit++)
     {
       //set digits
       mant[*t-t_rest]=digit;
@@ -22,7 +25,7 @@ void mantissa(int *t, int t_rest, int* p, int *exp, int *mant)
     double number=0.0;
     for(i=0;i<*t;i++)
     {
-      number=number+mant[i]*pow(*p,(*t-1-i)+*exp);
+      number=number+mant[i]*pow(*p,(-i-1)+*exp);
     }
     printf("%f\n",number);
   }
