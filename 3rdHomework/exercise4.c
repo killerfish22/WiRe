@@ -52,5 +52,6 @@ int main (int argc,char** argv)
     mantissa(&t,t,&p,&b,mant);
   }
   
+  free(mant);
   return 0;
 }
