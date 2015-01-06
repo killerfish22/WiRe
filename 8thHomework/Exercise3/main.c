@@ -20,7 +20,7 @@ int main (int argc , char *argv ){
 
 	// read a dense matrix to A and measure the time
 	tic = wtime(); 
-	if ( my_matrix_read ("demo100.mtx", &A)){
+	if ( my_matrix_read ("demo5625.mtx", &A)){
 		fprintf(stderr,"Can not read matrix.\n"); 
 		return 1; 
 	}
@@ -149,3 +149,25 @@ void L_solvem_trsm(struct my_matrix_st *L, struct my_matrix_st *B)
   double alpha = 1;
   dtrsm_("L", "L", "N", "N", &(m), &(n), &(alpha), L->values, &(L->LD), B->values, &(B->LD)); 
 }
+
+/*
+OUTPUT:
+ 
+demo100:
+Reading the matrix took 0.0330969 seconds
+Compute the matrix by c) took 0.000676008 seconds
+Compute the matrix by d) took 0.00995489 seconds
+Compute the matrix by e) took 0.000781101 seconds
+
+demo2500:
+Reading the matrix took 2.01327 seconds
+Compute the matrix by c) took 3.52438 seconds
+Compute the matrix by d) took 0.438389 seconds
+Compute the matrix by e) took 0.463722 seconds
+
+demo5625:
+Reading the matrix took 22.2919 seconds
+Compute the matrix by c) took 23.8809 seconds
+Compute the matrix by d) took 1.78599 seconds
+Compute the matrix by e) took 2.27577 seconds
+*/
