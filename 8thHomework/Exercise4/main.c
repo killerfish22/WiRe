@@ -59,7 +59,6 @@ int main (int argc , char *argv ){
 	ipiv=(int*)calloc(N,sizeof(int));
 	int ldb=N;
 	int info=0;
-// 	char* trans="N";
 	
 	dgetrf_(&M, &N, A.values, &M, ipiv, &info);
 	dgetrs_("N", &M, &nrhs, A.values, &M, ipiv, RHS1.values, &N, &info);
@@ -73,6 +72,7 @@ int main (int argc , char *argv ){
 	  fprintf(fp,"%f %f\n",RHS1.values[i],RHS2.values[i]);
 	}
 	
+	free(ipiv);
 		
 	
 	/* Do not change anything below */
